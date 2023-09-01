@@ -1,0 +1,24 @@
+/* styles/DeleteTaskButton.css */
+
+/* Button Styles */
+button {
+    padding: 8px 16px;
+    background-color: #ff5555; /* Red color for delete button */
+    color: #fff; /* Text color */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+  }
+  
+  button:hover {
+    background-color: #ff3333; /* Darker red on hover */
+  }
+  
+  /* Center the button */
+  button {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Optional: Add additional styles as needed */
+  

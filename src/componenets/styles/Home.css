@@ -1,0 +1,38 @@
+/* styles/Home.css */
+
+/* Container Styles */
+.container {
+    max-width: 800px; /* Adjust the maximum width as needed */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Heading Styles */
+  h2 {
+    font-size: 24px;
+    color: #333; /* Text color */
+    margin-bottom: 10px;
+  }
+  
+  /* Paragraph Styles */
+  p {
+    font-size: 16px;
+    color: #666; /* Text color */
+    margin-bottom: 10px;
+  }
+  
+  /* List Styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 16px;
+    color: #444; /* Text color */
+    margin-bottom: 5px;
+  }
+  
+  /* Optional: Add additional styles as needed */
+  

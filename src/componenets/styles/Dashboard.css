@@ -1,0 +1,38 @@
+/* styles/dashboard.css */
+
+.dashboard-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logout-button {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .dashboard-links {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+  }
+  
+  .dashboard-links li {
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-links a {
+    text-decoration: none;
+    color: #007bff;
+  }
+  
+  .dashboard-links a:hover {
+    text-decoration: underline;
+  }
+  
