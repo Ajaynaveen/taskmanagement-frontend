@@ -2,7 +2,7 @@ import { useDispatch } from "react-redux";
 import auth from '../services/auth';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import './styles/signin.css'; // Import the CSS file
+import './styles/Signin.css'; 
 
 const Signin = () => {
   const [email, setEmail] = useState('');
