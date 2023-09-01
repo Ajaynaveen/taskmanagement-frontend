@@ -3,7 +3,7 @@ import userServices from "../services/users"
 import { useDispatch } from 'react-redux'
 import {  useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import './styles/viewprofile.css'
+import './styles/Viewprofile.css'
 function Viewprofile() {
     const[userProfile,setuserprofile]=useState({})
     const dispatch=useDispatch();
