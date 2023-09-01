@@ -1,7 +1,7 @@
 import React from 'react';
 import taskService from '../services/taskService';
 import { useDispatch } from 'react-redux';
-import './styles/DeleteTaskButton.css'
+import "./styles/DeleteTaskButton.css"
 function DeleteTaskButton({ taskId, setTaskList }) {
   const dispatch = useDispatch();
 
