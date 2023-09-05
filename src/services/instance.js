@@ -1,7 +1,7 @@
 import axios from "axios"
 import gettoken from "../utils/authutils";
 
-const baseurl='https://taskmanagement-backend-b0qs.onrender.com/api';
+const baseurl='https://inventoryapp-zjb8.onrender.com/api';
 const authInstance = axios.create({
     baseURL: baseurl,
     timeout: 5000,
