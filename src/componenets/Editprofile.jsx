@@ -29,7 +29,7 @@ function EditProfile() {
     };
 
     try {
-      const response = await userServices.editProfile(updatedProfile);
+      const response = await userServices.editProfile(updatedProfile, dispatch);
 
       if (response) {
         console.log('Profile updated:', response);

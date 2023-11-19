@@ -49,6 +49,9 @@ const Signin = () => {
       <p>
         Don't have an account? <Link to="/signup">Sign Up</Link>
       </p>
+      <p>
+        forgetpassword? <Link to="/forgetpassword">forgetpassword</Link>
+      </p>
     </div>
   );
 }

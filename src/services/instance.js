@@ -1,10 +1,10 @@
 import axios from "axios"
 import gettoken from "../utils/authutils";
 
-const baseurl='https://inventoryapp-zjb8.onrender.com/api';
+const baseurl='https://taskmanagement-backend-b0qs.onrender.com/api';
 const authInstance = axios.create({
     baseURL: baseurl,
-    timeout: 5000,
+    timeout: 50000,
     headers: {
         'Content-Type': 'application/json',
     }
@@ -12,7 +12,7 @@ const authInstance = axios.create({
 
 const protectedInstance = axios.create({
     baseURL: baseurl,
-    timeout: 5000
+    timeout: 50000
 });
 
 protectedInstance.interceptors.request.use(

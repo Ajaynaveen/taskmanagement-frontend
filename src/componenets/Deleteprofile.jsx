@@ -2,12 +2,14 @@ import React from 'react';
 import userServices from '../services/users';
 import { Link, useNavigate } from 'react-router-dom';
 import './styles/Deleteprofile.css'
+import { useDispatch } from 'react-redux';
 
 function Deleteprofile() {
   const navigate = useNavigate();
+  const dispatch=useDispatch();
 
   const handleDeleteProfile = async() => {
-   await userServices.deleteProfile()
+   await userServices.deleteProfile(dispatch)
       .then(() => {
         localStorage.removeItem('loggedInUser');
         alert('Profile deleted successfully!');

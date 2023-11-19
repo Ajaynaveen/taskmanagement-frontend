@@ -76,6 +76,22 @@ const deleteTask = async (dispatch, taskId) => {
   }
 };
 
+const searchTasks = async (searchQuery,dispatch) => {
+  try {
+    const response = await instance.protectedInstance.get(`/tasks/search?search=${searchQuery}`);
+    if (response.status === 200) {
+      console.log('Searching tasks successful');
+      return response.data;
+    } else {
+      console.log('Searching tasks failed');
+      return null;
+    }
+  } catch (error) {
+    console.error('Error searching tasks', error);
+    return null;
+  }
+};
+
 
 
 
@@ -87,6 +103,6 @@ export default {
   createTask,
  
   editTask,
-  deleteTask
+  deleteTask,searchTasks
  
 };

@@ -25,11 +25,17 @@ const getprofile = async (dispatch) => {
     }
 };
 
-const editProfile = async (updatedProfile) => {
+const editProfile = async (updatedProfile,dispatch) => {
     try {
       const response = await instance.protectedInstance.put('/users/profile', updatedProfile);
       if (response.status === 200) {
+        await dispatch({
+          type: "EDIT_USER_PROFILE",
+          payload: response.data
+      });
+     
         console.log('Profile updated successfully');
+        console.log(response.data)
         return response.data;
       } else {
         console.log('Profile update failed');
@@ -40,12 +46,15 @@ const editProfile = async (updatedProfile) => {
       return null;
     }
   };
-  const deleteProfile = async () => {
+  const deleteProfile = async (dispatch) => {
     try {
       const response = await instance.protectedInstance.delete('/users/profile');
       console.log("Delete response", response);
   
       if (response.status === 200) {
+        await dispatch({
+          type: "USER_LOGOUT",
+      });
         console.log('Profile deleted successfully');
         return true;
       } else if (response.status === 401) {

@@ -13,6 +13,8 @@ import AddTaskForm from "./componenets/AddTaskForm";
 import TaskList from "./componenets/TaskList";
 import EditTaskForm from "./componenets/EditTaskForm";
 import DeleteTaskButton from "./componenets/DeleteTaskButton";
+import TaskSearch from "./componenets/TaskSearch";
+
 
 function App() {
  
@@ -24,7 +26,10 @@ function App() {
           <Route path="/" element={<Home/>}/>
          <Route path="/signup" element={<Signup/>}/>
          <Route path="/signin" element={<Signin/>}/>
+        
+
          <Route path="/dashboard" element={<Dashboard/>}/>
+
          <Route path="/viewprofile" element={<Viewprofile/>}/>
          <Route path="/editprofile" element={<Editprofile/>}/>
          <Route path="/deleteprofile" element={<Deleteprofile/>}/>
@@ -32,6 +37,9 @@ function App() {
          <Route path="/createtask" element={<TaskList/>}/>
          <Route path="/edittask" element={<EditTaskForm/>}/>
          <Route path="/deletetask" element={<DeleteTaskButton/>}/>
+         <Route path="/searchtask" element={<TaskSearch/>}/>
+
+
         </Routes>
         
       </div>
