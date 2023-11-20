@@ -70,13 +70,13 @@ const navigate=useNavigate();
   const handlesignup = (e) => {
     e.preventDefault();
     const credentials = { name, email, password }; // Define credentials here
-    const response=auth.signup(credentials);
-    if(response){
+    auth.signup(credentials);
+   
     setName('');
     setEmail('');
     setPassword('');
     navigate('/signin')
-    }
+    
   }
   
 
