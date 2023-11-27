@@ -51,7 +51,7 @@ function ForgetPassword() {
 
     try {
       alert("password has been sent succesfully")
-      const response = await axios.post('http://localhost:3001/api/users/forgetpassword', formData);
+      const response = await axios.post('https://taskmanagement-backend-b0qs.onrender.com/api/users/forgetpassword', formData);
 
       console.log(response, "res");
 

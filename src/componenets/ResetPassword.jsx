@@ -66,7 +66,7 @@ const ResetPassword = () => {
       const token = urlSearchParams.get('token');
 
       // Making the POST request with the token as a parameter
-      const response = await axios.post(`http://localhost:3001/api/users/reset-password/${token}`, {
+      const response = await axios.post(`https://taskmanagement-backend-b0qs.onrender.com/api/users/reset-password/${token}`, {
         newPassword,
       });
 
