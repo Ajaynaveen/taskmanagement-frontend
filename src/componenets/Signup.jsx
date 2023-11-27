@@ -75,7 +75,11 @@ const navigate=useNavigate();
     setName('');
     setEmail('');
     setPassword('');
-    navigate('/signin')
+    setTimeout(()=>{
+      navigate('/signin')
+
+    },5000)
+  
     
   }
   

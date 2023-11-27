@@ -14,6 +14,8 @@ import TaskList from "./componenets/TaskList";
 import EditTaskForm from "./componenets/EditTaskForm";
 import DeleteTaskButton from "./componenets/DeleteTaskButton";
 import TaskSearch from "./componenets/TaskSearch";
+import ForgetPassword from "./componenets/ForgetPassword";
+import ResetPassword from "./componenets/ResetPassword";
 
 
 function App() {
@@ -26,6 +28,9 @@ function App() {
           <Route path="/" element={<Home/>}/>
          <Route path="/signup" element={<Signup/>}/>
          <Route path="/signin" element={<Signin/>}/>
+         <Route path="/forgetpassword" element={<ForgetPassword/>}/>
+         <Route path="/reset-password" element={<ResetPassword/>}/>
+         
         
 
          <Route path="/dashboard" element={<Dashboard/>}/>
@@ -34,9 +39,10 @@ function App() {
          <Route path="/editprofile" element={<Editprofile/>}/>
          <Route path="/deleteprofile" element={<Deleteprofile/>}/>
          <Route path="/createtask" element={<AddTaskForm/>}/>
-         <Route path="/createtask" element={<TaskList/>}/>
+         <Route path="/tasklist" element={<TaskList/>}/>
          <Route path="/edittask" element={<EditTaskForm/>}/>
          <Route path="/deletetask" element={<DeleteTaskButton/>}/>
+
          <Route path="/searchtask" element={<TaskSearch/>}/>
 
 
