@@ -23,6 +23,12 @@ const userReducer = (state = initialState, action) => {
                 user:null,
                 userProfile:null
             }  
+
+            case "EDIT_USER_PROFILE":
+    return {
+        ...state,
+        user: action.payload
+    };
             
 
             default:

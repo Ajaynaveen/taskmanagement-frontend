@@ -11,7 +11,9 @@ export const ThemeProvider = ({ children }) => {
     const currentIndex = themes.indexOf(theme);
     const nextIndex = (currentIndex + 1) % themes.length;
     setTheme(themes[nextIndex]);
-  }; const getFontStyles = () => {
+  }; 
+  
+  const getFontStyles = () => {
     switch (theme) {
       case 'light':
         return {
@@ -25,14 +27,14 @@ export const ThemeProvider = ({ children }) => {
           fontFamily: 'Helvetica, sans-serif',
           fontSize: '16px',
           fontWeight: 'bold',
-          color: '#fff', // Text color
+          color: '#fff', 
         };
       case 'blue':
         return {
           fontFamily: 'Verdana, sans-serif',
           fontSize: '18px',
           fontWeight: 'normal',
-          color: '#007bff', // Text color
+          color: '#007bff', 
         };
       case 'green':
         return {

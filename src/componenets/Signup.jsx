@@ -1,62 +1,3 @@
-// import auth from '../services/auth';
-// import React, { useState } from 'react'
-// import { Link } from 'react-router-dom';
-
-// function Signup() {
-//     const[name,setname]=useState('')
-//     const[email,setemail]=useState('');
-//     const[password,setpassword]=useState('')
-
-//     const handlesignup=(e)=>{
-//             e.preventDefault();
-//             const credentials = { name, email, password }; // Define credentials here
-//             auth.signup(credentials);
-//             setname('');
-//             setemail('')
-//             setpassword('')
-//          }
-   
-
-   
-//   return (
-//    <div>
-//     <form  onSubmit={handlesignup}>
-        
-//     <input type="text"
-//             placeholder='name'
-//             value={name}
-//             onChange={(e)=>{
-//                 setname(e.target.value)
-//            }} /><br></br>
-
-// <input type="email"
-//              placeholder='email' 
-//              value={email}
-//             onChange={(e)=>{
-//                 setemail(e.target.value)
-//             }}/><br></br>
-
-// <input type="password"
-//             placeholder='password'
-//             value={password}
-//              onChange={(e)=>{
-//                  setpassword(e.target.value);
-//             }} /><br></br>
-
-// <button type="submit">signup</button>
-            
-//     </form>
-// <p>
-//     altready registered?<Link to="/signin">signin</Link>
-// </p>
-    
-//    </div> 
-//   )
-// }
-
-// export default Signup
-
-
 import auth from '../services/auth';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -66,23 +7,37 @@ function Signup() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-const navigate=useNavigate();
-  const handlesignup = (e) => {
+  const navigate = useNavigate();
+
+  const handlesignup = async (e) => {
     e.preventDefault();
     const credentials = { name, email, password }; // Define credentials here
-    auth.signup(credentials);
-   
+
+    try {
+      const response = await auth.signup(credentials);
+
+      // Assuming your API returns a success status, e.g., 201 Created
+      if (response.status ==201) {
+        // If signup is successful, navigate to login after a delay
+        setTimeout(() => {
+          navigate('/signin');
+        }, 5000);
+      } else {
+        // Handle other response statuses (e.g., display an alert)
+        console.error('Signup failed. Unexpected response:', response);
+        alert('Signup failed. Unexpected response');
+      }
+    } catch (error) {
+      // Handle signup failure
+      console.error('Error during signup:', error);
+      alert('Signup failed. ' + error); // Display an alert with the error message
+    }
+
+    // Clear form fields
     setName('');
     setEmail('');
     setPassword('');
-    setTimeout(()=>{
-      navigate('/signin')
-
-    },5000)
-  
-    
   }
-  
 
   return (
     <div className="signup-container">

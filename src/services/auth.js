@@ -9,6 +9,7 @@ const signup=async(credentials)=>{
   if(response){
     console.log('sign up successful')
     console.log(response.data.message)
+    return response;
   }
     }catch(error){
     console.error('signup failed',error)    
@@ -23,7 +24,7 @@ const signin=async(credentials)=>{
 
 const response=await instance.authInstance.post('/users/signin',credentials);
 if(response){
-  console.log("login successfull")  //this is the message that we get back when login was succesful
+  console.log("login successfull")  
   localStorage.setItem('loggedInUser',JSON.stringify(response.data))
   return response.data
 }
