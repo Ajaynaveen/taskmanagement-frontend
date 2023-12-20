@@ -16,7 +16,7 @@ function Signup() {
     try {
       const response = await auth.signup(credentials);
 
-      // Assuming your API returns a success status, e.g., 201 Created
+    
       if (response.status ==201) {
         // If signup is successful, navigate to login after a delay
         setTimeout(() => {

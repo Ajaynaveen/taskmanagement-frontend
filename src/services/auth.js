@@ -7,8 +7,8 @@ const signup=async(credentials)=>{
 
   const response=await instance.authInstance.post('/users/signup',credentials);
   if(response){
-    console.log('sign up successful')
-    console.log(response.data.message)
+    
+    console.log(response)
     return response;
   }
     }catch(error){

@@ -4,7 +4,7 @@ import gettoken from "../utils/authutils";
 const baseurl='https://taskmanagement-backend-b0qs.onrender.com/api';
 const authInstance = axios.create({
     baseURL: baseurl,
-    timeout: 50000,
+    timeout: 5000,
     headers: {
         'Content-Type': 'application/json',
     }
@@ -12,7 +12,7 @@ const authInstance = axios.create({
 
 const protectedInstance = axios.create({
     baseURL: baseurl,
-    timeout: 50000
+    timeout: 5000
 });
 
 protectedInstance.interceptors.request.use(
