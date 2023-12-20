@@ -15,9 +15,9 @@ function Signup() {
 
     try {
       const response = await auth.signup(credentials);
-
+console.log(response.data)
     
-      if (response.status ==201) {
+      if (response.data ) {
         // If signup is successful, navigate to login after a delay
         setTimeout(() => {
           navigate('/signin');
