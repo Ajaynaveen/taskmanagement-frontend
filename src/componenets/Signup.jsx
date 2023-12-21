@@ -1,6 +1,7 @@
 import auth from '../services/auth';
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import axios from 'axios'; // Import axios
 import './styles/Signup.css'; // Import the CSS file
 
 function Signup() {
@@ -11,12 +12,11 @@ function Signup() {
 
   const handlesignup = async (e) => {
     e.preventDefault();
-    const credentials = { name, email, password }; // Define credentials here
+    const credentials = { name, email, password };
 
     try {
-      const response = await auth.signup(credentials);
-console.log(response.data)
-    
+      const response = await axios.post('https://taskmanagement-backend-b0qs.onrender.com/api/users/signup', credentials);
+console.log("response",response)
       if (response) {
         // If signup is successful, navigate to login after a delay
         setTimeout(() => {
@@ -30,14 +30,14 @@ console.log(response.data)
     } catch (error) {
       // Handle signup failure
       console.error('Error during signup:', error);
-      alert('Signup failed. ' + error); // Display an alert with the error message
+      alert('Signup failed. ' + error.message); // Display an alert with the error message
     }
 
     // Clear form fields
     setName('');
     setEmail('');
     setPassword('');
-  }
+  };
 
   return (
     <div className="signup-container">
@@ -74,7 +74,7 @@ console.log(response.data)
         Already registered? <Link to="/signin">Sign In</Link>
       </p>
     </div>
-  )
+  );
 }
 
 export default Signup;
